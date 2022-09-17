@@ -3,7 +3,7 @@ namespace Assignment1.Tests;
 public class IteratorsTests
 {
     [Fact]
-    public void Flatten_given_list_of_lists()
+    public void Flatten_given_list_of_lists_of_ints_returns_list_of_ints()
     {
         // Arrange
         var list = new List<List<int>>
@@ -22,7 +22,7 @@ public class IteratorsTests
     }
 
     [Fact]
-    public void Filter_given_list_of_ints_return_list_of_evens()
+    public void Filter_given_list_of_ints_return_list_of_even_ints()
     {
         // Arrange
         var list = new List<int>{1, 2, 3, 4, 5, 6, 7, 8, 9};
@@ -34,7 +34,5 @@ public class IteratorsTests
 
         // Assert
         Assert.Equal(expected, actual);
-
-
     }
 }
