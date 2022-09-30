@@ -98,7 +98,6 @@ public class RegExprTests
 
         // Assert
         Assert.Equal(expected, actual);
-    
     }
 
 }

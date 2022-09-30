@@ -1,5 +1,95 @@
 \documentclass{article}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\title{BDSA Assignment-01}
+\author{Jacob Sonne (json@itu.dk)}
+\date{\today}
+
 
 \begin{document}
+\maketitle
+\section*{C\#}
+\subsection*{Github}
+Github: \href{https://github.com/Jacob-Sonne/assignment-01}{https://github.com/Jacob-Sonne/assignment-01}
 
+\subsection*{Generics}
+Compare the following two methods:
+
+\noindent\rule{\textwidth}{1pt}
+\begin{lstlisting}
+int GreaterCount<T, U>(IEnumerable<T> items, T x)
+    where T : IComparable<T>;
+
+int GreaterCount<T, U>(IEnumerable<T> items, T x)
+    where T : U
+    where U : IComparable<U>;
+\end{lstlisting}
+\noindent\rule{\textwidth}{1pt}
+Explain in your own words what the type constraints mean for both methods.
+\\\\
+In the first method, T implements the interface IComparable \textless T\textgreater.
+In the second method, T inherits from the class U and the class U implements the interface IComparable\textless U\textgreater. 
+This means that T and U are guaranteed to be comparable in the second method but they might not be in the first method
+
+\section*{Software Engineering}
+\subsection*{Exercise 1}
+I want a version control system that records changes to a file or set of files over time so that I can recall specific versions later. This system should work on any kind of files may they contain source code, configuration data, diagrams, binaries, etc.
+\newline
+\newline
+I want to use such a system to be able to revert selected files back to a previous state, revert the entire project back to a previous state, to compare changes over time, to see who last modified something that might be causing a problem, who introduced an issue and when, etc.
+
+\subsubsection*{Noun/verb Domain}
+Explain in which domain nouns and verbs that you identified are located.
+\\\\
+The nouns and verbs identified with the Noun/verb technique belongs to the problem domain and helps identify potential classes and their behaviour.
+\subsubsection*{libgit2sharp}
+The implementation in libgit2sharp does neither contain a class File nor a class State. Explain how that can be when libgit2sharp is an implementation of Git which is certainly a version control system as described above.
+\\\\
+The nouns
+\\\\\\\\\\
+\subsection*{Exercise 2}
+In class we discussed so far the Coronapas App and Git as cases for software systems.
+\subsubsection*{Application Type}
+Categorize each of the two systems into Sommervilles types of applications. Note, the systems may not fall cleanly into a single category.
+
+
+\subsubsection*{Arguments}
+Argue for why you choose certain categories for each system.
+
+
+\subsection*{Exercise 3}
+Sommerville describes that there are two kinds of software products. Describe for the Coronapas App and Git what kind of software product they are and provide arguments for your believes.
+
+\subsubsection*{Coronapas (Customized)}
+The Coronapas app was commissioned by the Danish Government with the specific purpose of handling the Covid-19 pandemic. It is therefore a customized piece of software.
+
+
+\subsubsection*{Git (Generic)}
+GitHub was developed for the general purpose of handling software version control and is not limited to specific customers but is relevant for all software developers. It is therefore a generic product. 
+
+\subsection*{Exercise 4}
+Sommerville discusses quality of professional software, non-functional quality attributes, or product characteristics. Compare the Coronapas App, Git, and the Insulin pump control system (see SE chap 1.3.1) with respect to the quality attributes dependability, security, efficiency, and maintainability.
+\\\\
+Do they all share the same characteristics with regards to these quality attributes or are these of varying importance to the three systems? Give examples for each of the three systems with regards to each if the quality attributes above.
+
+\subsection*{Exercise 5}
+Inspect the implementations Gitlet and Git a bit more thoroughly than in class.
+\subsubsection*{Gitlet Architecture}
+Explain why is there likely no architecture for Gitlet.
+\subsubsection*{}
+How could you infer the architecture of Git that was depicted in class without any more documentation, i.e., only the available source code?
+\subsubsection*{Gitlet has a particular design that mimics the architecture of Git but that is implemented differently. Can you describe it in words?}
+\subsubsection*{Git and Gitlet are designed with respect to different quality attributes (product characteristics). Name some of the most prominent quality attributes that influence the design of each of the two systems.}
+
+\subsection*{Exercise 6}
+Look at the following two cases of issues with health care software systems:
+\begin{itemize}
+    \item \href{https://www.version2.dk/artikel/softwareproblemer-skadede-mere-end-100-patienter-paa-amerikansk-hospital}{"Softwareproblemer skadede mere end 100 patienter på amerikansk hospital"}
+    \item \href{https://www.version2.dk/artikel/kodefejl-i-sundhedsplatformen-fem-patienter-har-faaet-forkert-dosis-medicin}{"Kodefejl i Sundhedsplatformen: Fem patienter har fået forkert dosis medicin"}
+\end{itemize}
+\subsubsection*{Based on the articles, describe the reasons that caused the respective issues.}
+\subsubsection*{Describe potential solutions to the problem.}
+\subsubsection*{Compare your solutions to the proposed solutions in the articles, which one would you as a software engineer recommend? Argue for your recommendations.}
+\subsubsection*{Discuss ethical dilemas in case you were developing either of these health care systems.}
 \end{document}

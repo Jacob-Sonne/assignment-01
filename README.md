@@ -1,7 +1,6 @@
 # Assignment 1
 
 ## C♯
-
 Clone this repository and bring the code pieces you need into your BDSA Assignments GitHub repository.
 
 ### Generics
